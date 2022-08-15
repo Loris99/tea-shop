@@ -1,0 +1,11 @@
+.MainContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* gap: 10px; */
+    background-color: #061537;
+}
+
+body {
+    margin: 0px
+}
