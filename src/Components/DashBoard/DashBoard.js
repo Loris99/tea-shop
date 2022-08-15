@@ -20,17 +20,17 @@ const moment = require('moment');
 
 const DashBoard = (props) => {
 
-    const [ChartData, setChartData] = useState([]);
-    const [pieChartData, setPieChartData] = useState([])
-    const [filterType, setFilterType] = useState('LastMonth')
-    const [isDataKey, setIsDataKey] = useState("week")
+    const [ChartData, setChartData] = useState([]); //initailize the data whhich will be sent to the charts
+    const [pieChartData, setPieChartData] = useState([]);//initailize the data whhich will be sent to pie charts
+    const [filterType, setFilterType] = useState('LastMonth');//choose he filter Type
+    const [isDataKey, setIsDataKey] = useState("week");//set the data in the charts
     const filterTypeHanlde = {
         lastMonth: "week",
         lastWeek: "day",
         lastYear: "month",
         lastDay: "time"
     }
-
+//choose the type of data which will be displayed
     useEffect(() => {
         if (filterType === 'LastMonth') {
             setChartData([])
@@ -56,19 +56,17 @@ const DashBoard = (props) => {
         }
 
     }, [filterType])
-    console.log('use effect>>', ChartData)
-
+//default state
     useEffect(() => {
         FilterDataLastMonth();
-        // console.log('use effect>>', ChartData)
-
     }, [])
+    //update after choosing from dropdown list
     const updateFilterType = (chosenType) => {
         setFilterType(chosenType)
     }
+    //to display data from the last day
     const FilterDataLastDay = () => {
         const format = 'HH:mm:ss'
-        // const morning = moment("08:00:00", format).toString();
         const morning = moment("08:00:00", format);
         const noon = moment("12:00:00", format);
         const evening = moment("18:00:00", format);
@@ -76,25 +74,18 @@ const DashBoard = (props) => {
         const yesterday = moment().subtract(1, "d").format('YYYY-MM-DD')
         const tempLastDayData = [...lastDayData];
         const tempPieData = [...pieData];
-        // let  tempPieData[0].value = 0;
-        // let tempPieData[1].value = 0;
-        // let whiteTea_total = 0;
-        // let tempPieData[3].value = 0;
-
+       
         data.map((item, index) => {
-            const itemDate = moment(new Date(item.datetime)).format('YYYY-MM-DD').toString();
-            const itemTime = moment(new Date(item.datetime)).format("HH:mm:ss").toString()
+            const itemDate = moment(new Date(item.datetime)).format('YYYY-MM-DD').toString();//get item date
+            const itemTime = moment(new Date(item.datetime)).format("HH:mm:ss").toString();//get item time
 
-            console.log("item Date ", itemDate)
-            console.log("yesterday ", yesterday)
-            console.log("item time ", itemTime)
+    //check if item of dat a matches yesterday which mean it was during the last day
             if (moment(itemDate).isSame(yesterday)) {
-                if (moment(itemTime).isBetween(morning, noon), "[)") {
+                if (moment(itemTime).isBetween(morning, noon), "[)") {//check which period of day was it
                     if (item.name === "Black Tea") {
-                        tempLastDayData[0].listofBlackTea_totalItems++;
+                        tempLastDayData[0].listofBlackTea_totalItems++; //add to the data to send to charts
                         tempLastDayData[0].listofBlackTea_totalPrice += item.price;
-                        tempPieData[0].value++;
-                        //  tempPieData[0].value++;
+                        tempPieData[0].value++; //add to the data to send to pie chart
                     }
                     else if (item.name === "Green Tea") {
                         tempLastDayData[0].listOfGreenTea_totalItems++;
@@ -114,6 +105,8 @@ const DashBoard = (props) => {
                     }
 
                 }
+                //check if it's afternoon
+
                 else if (moment(itemTime).isBetween(noon, evening), "[)") {
                     if (item.name === "Black Tea") {
 
@@ -139,7 +132,7 @@ const DashBoard = (props) => {
                     }
 
                 }
-
+//check if it's eve
                 else if (moment(itemTime).isBetween(evening, night), "[)") {
                     if (item.name === "Black Tea") {
 
@@ -165,7 +158,7 @@ const DashBoard = (props) => {
                     }
 
                 }
-                //check if the week4 of the month
+                    //check if nigth
                 else if (moment(itemTime).isBetween(morning, night), "[)") {
                     if (item.name === "Black Tea") {
 
@@ -195,17 +188,13 @@ const DashBoard = (props) => {
 
 
         })
-        setChartData(tempLastDayData);
-        setPieChartData(tempPieData);
-        // console.log('use effect>', ChartData)
+        setChartData(tempLastDayData); //update char data
+        setPieChartData(tempPieData);//update pie chardata
 
     }
-
+//based on prev year data
     const FilterDataLastYear = () => {
-        // let  tempPieData[0].value = 0;
-        // let tempPieData[1].value = 0;
-        // let whiteTea_total = 0;
-        // let tempPieData[3].value = 0;
+      //get the year rangegit
         const yearRange = moment().subtract(1, 'y').format('YYYY-MM-DD');
         const today = moment().format('YYYY-MM-DD');
         const tempLastYearData = [...lastYearData];

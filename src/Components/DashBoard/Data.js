@@ -1,7 +1,7 @@
 export const filterOptions = [
+    { value: "LastMonth", label: "Last Month" },
     { value: "LastDay", label: "Last Day" },
     { value: "LastWeek", label: "Last Week" },
-    { value: "LastMonth", label: "Last Month" },
     { value: "LastYear", label: "Last Year" }
 ]
 export const pieData = [
@@ -21,14 +21,13 @@ export const data = [
     { name: "Green Tea", datetime: "Aug 10 2022 17:00:41", price: 10 },
     { name: "Green Tea", datetime: "Aug 01 2022 17:00:41", price: 10 },
     { name: "White Tea", datetime: "Aug 12 2022 17:00:41", price: 12 },
-    { name: "White Tea", datetime: "Aug 14   2022 15:00:41", price: 12 },
+    { name: "White Tea", datetime: "Aug 14  2022 15:00:41", price: 12 },
     { name: "White Tea", datetime: "Aug 14  2022 17:00:41", price: 12 },
     { name: "White Tea", datetime: "Jul 30  2022 17:00:41", price: 12 },
     { name: "Yellow Tea", datetime: "Jul 28 2022 17:00:41", price: 20 },
     { name: "Yellow Tea", datetime: "Jul 27 2022 17:00:41", price: 20 },
     { name: "Yellow Tea", datetime: "Aug 14 2022 13:30:41", price: 20 },
-    { name: "Oolong Tea", datetime: "Jul 29 2022 17:00:41", price: 20 },
-    { name: "Oolong Tea", datetime: "Aug 10 2022 17:00:41", price: 20 }
+
 ];
 export const lastDayData = [
     {
