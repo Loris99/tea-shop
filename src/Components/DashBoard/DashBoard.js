@@ -194,22 +194,19 @@ const DashBoard = (props) => {
     }
 //based on prev year data
     const FilterDataLastYear = () => {
-      //get the year rangegit
+      //get the year range
         const yearRange = moment().subtract(1, 'y').format('YYYY-MM-DD');
         const today = moment().format('YYYY-MM-DD');
         const tempLastYearData = [...lastYearData];
         const tempPieData = [...pieData];
 
-        console.log("day of week datat,", tempLastYearData[1].day)
         data.map((item, index) => {
             const itemDate = moment(new Date(item.datetime)).format('YYYY-MM-DD').toString();
-            const itemDay = moment(new Date(item.datetime)).format("MMM");
+            const itemDay = moment(new Date(item.datetime)).format("MMM");//get speific onth of item
             console.log(itemDay.toString());
-            // console.log("oky ", moment(itemDate).isBetween(week4Range, today))
-            if (moment(itemDate).isBetween(yearRange, today), "[]") {
+            if (moment(itemDate).isBetween(yearRange, today), "[]") { //check if item is in the past year 
 
-                tempLastYearData.map((dayDate, i) => {
-                    // console.log("array of days", tempLastYearData[i].day)
+                tempLastYearData.map((dayDate, i) => {//if they are in the same month add to data
 
                     if (itemDay === tempLastYearData[i].month) {
                         if (item.name === "Black Tea") {
@@ -244,25 +241,19 @@ const DashBoard = (props) => {
         setChartData(tempLastYearData);
         setPieChartData(tempPieData)
     }
+    //filter on last week
     const FilterDataLastWeek = () => {
-        // let  tempPieData[0].value = 0;
-        // let tempPieData[1].value = 0;
-        // let whiteTea_total = 0;
-        // let tempPieData[3].value = 0;
+    
         const weekRange = moment().subtract(7, 'd').format('YYYY-MM-DD');
         const today = moment().format('YYYY-MM-DD');
         const tempLastWeekData = [...lastWeekData];
         const tempPieData = [...pieData];
-        console.log("day of week datat,", tempLastWeekData[1].day)
         data.map((item, index) => {
             const itemDate = moment(new Date(item.datetime)).format('YYYY-MM-DD').toString();
             const itemDay = moment(new Date(item.datetime)).format("ddd");
             console.log(itemDay.toString());
-            // console.log("oky ", moment(itemDate).isBetween(week4Range, today))
-            if (moment(itemDate).isBetween(weekRange, today), "[]") {
-
+            if (moment(itemDate).isBetween(weekRange, today), "[]") { //chek if it's in the past week rage then check the day
                 tempLastWeekData.map((dayDat, i) => {
-                    // console.log("array of days", tempLastWeekData[i].day)
 
                     if (itemDay === tempLastWeekData[i].day) {
                         if (item.name === "Black Tea") {
@@ -300,14 +291,9 @@ const DashBoard = (props) => {
 
 
 
-
+//filter based on last month
     const FilterDataLastMonth = () => {
-
-        // let  tempPieData[0].value = 0;
-        // let tempPieData[1].value = 0;
-        // let whiteTea_total = 0;
-        // let tempPieData[3].value = 0;
-        const week4Range = moment().subtract(7, 'd').format('YYYY-MM-DD');
+        const week4Range = moment().subtract(7, 'd').format('YYYY-MM-DD');//ranges
         const week3Range = moment().subtract(14, 'd').format('YYYY-MM-DD');
         const week2Range = moment().subtract(21, 'd').format('YYYY-MM-DD');
         const week1Range = moment().subtract(28, 'd').format('YYYY-MM-DD');
@@ -317,7 +303,6 @@ const DashBoard = (props) => {
 
         data.map((item, index) => {
             const itemDate = moment(new Date(item.datetime)).format('YYYY-MM-DD').toString();
-            // console.log("oky ", moment(itemDate).isBetween(week4Range, today))
             if (moment(itemDate).isBetween(week1Range, week2Range), "[]") {
                 if (item.name === "Black Tea") {
                     tempLastMonthData[0].listofBlackTea_totalItems++;
@@ -342,7 +327,7 @@ const DashBoard = (props) => {
                 }
 
             }
-            if (moment(itemDate).isBetween(week2Range, week3Range)) {
+            if (moment(itemDate).isBetween(week2Range, week3Range), "[]") {
                 if (item.name === "Black Tea") {
 
                     tempLastMonthData[1].listofBlackTea_totalItems++;
@@ -368,7 +353,7 @@ const DashBoard = (props) => {
 
             }
 
-            if (moment(itemDate).isBetween(week3Range, week4Range)) {
+            if (moment(itemDate).isBetween(week3Range, week4Range), "[]") {
                 if (item.name === "Black Tea") {
 
                     tempLastMonthData[2].listofBlackTea_totalItems++;
@@ -394,7 +379,7 @@ const DashBoard = (props) => {
 
             }
             //check if the week4 of the month
-            if (moment(itemDate).isBetween(week4Range, today)) {
+            if (moment(itemDate).isBetween(week4Range, today), "[]") {
                 if (item.name === "Black Tea") {
 
                     tempLastMonthData[3].listofBlackTea_totalItems++;
@@ -425,7 +410,6 @@ const DashBoard = (props) => {
         setChartData(tempLastMonthData);
         setPieChartData(tempPieData);
 
-        // console.log('use effect>', ChartData)
 
     }
 

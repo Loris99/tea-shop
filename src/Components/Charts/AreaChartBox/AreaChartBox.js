@@ -5,8 +5,6 @@ import React from 'react';
 
 
 const AreaChartBox = (props) => {
-
-    // console.log("bar chart", props.ChartData)
     return (
         <ResponsiveContainer width="100%" height="100%">
             <AreaChart

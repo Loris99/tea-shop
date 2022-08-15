@@ -4,13 +4,11 @@ import React from 'react';
 
 
 const LineChartBox = (props) => {
-
-    // console.log("data", props.ChartData)
+//linechart data
     return (
         <ResponsiveContainer width="100%" height="100%">
 
             <LineChart width={400} height={400} data={props.ChartData}
-            // margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
             >
                 <XAxis dataKey={props.isDataKey} />
                 <YAxis />

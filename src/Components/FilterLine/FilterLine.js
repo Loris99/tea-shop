@@ -16,6 +16,7 @@ const FilterLine = (props) => {
                 className={classes.dropDown}
                 onChange={filterTypeChange}
             >
+                {/* for thed dropddown */}
                 {filterOptions.map((option, index) => (
                     <option key={index} value={option.value}>
                         {option.label}
