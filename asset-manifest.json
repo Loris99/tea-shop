@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tea-shop/static/css/main.906d2fb0.css",
+    "main.js": "/tea-shop/static/js/main.597d47f6.js",
+    "static/js/787.ad5cdcf9.chunk.js": "/tea-shop/static/js/787.ad5cdcf9.chunk.js",
+    "index.html": "/tea-shop/index.html",
+    "main.906d2fb0.css.map": "/tea-shop/static/css/main.906d2fb0.css.map",
+    "main.597d47f6.js.map": "/tea-shop/static/js/main.597d47f6.js.map",
+    "787.ad5cdcf9.chunk.js.map": "/tea-shop/static/js/787.ad5cdcf9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.906d2fb0.css",
+    "static/js/main.597d47f6.js"
+  ]
+}
