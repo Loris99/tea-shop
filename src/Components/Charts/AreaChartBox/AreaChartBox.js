@@ -3,7 +3,6 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 import React from 'react';
 
-
 const AreaChartBox = (props) => {
     return (
         <ResponsiveContainer width="100%" height="100%">

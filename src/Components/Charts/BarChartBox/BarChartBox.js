@@ -20,7 +20,6 @@ const BarChartBox = (props) => {
                 <XAxis dataKey={props.isDataKey} />
                 <YAxis />
                 <Tooltip />
-
                 <Bar stackId="a" dataKey="listofBlackTea_totalPrice" fill="#6666ff" />
                 <Bar stackId="a" dataKey="listOfGreenTea_totalPrice" fill="#fff68f" />
                 <Bar stackId="a" dataKey="listOfYellowTea_totalPrice" fill="#ff55a3" />

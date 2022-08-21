@@ -1,9 +1,7 @@
 .topBarContainer {
     display: flex;
     justify-content: flex-start;
-    /* background-color: #151618; */
     padding-left: 30px;
-    /* background-color: #b07946; */
 }
 
 h1 {
@@ -14,5 +12,4 @@ h1 {
 span {
     color: #A9A454;
     font-size: 1.2rem;
-
 }

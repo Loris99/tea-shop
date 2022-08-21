@@ -1,4 +1,3 @@
-import { useState } from "react";
 import classes from "./FilterLine.module.css"
 import { filterOptions } from "../DashBoard/Data"
 

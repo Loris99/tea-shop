@@ -20,10 +20,6 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
 
 const PieChartBox = (props) => {
-    // static demoUrl = 'https://codesandbox.io/s/pie-chart-with-customized-label-dlhhj';
-    // extends PureComponent
-
-
     return (
         <ResponsiveContainer width="100%" height="100%">
             <PieChart width={400} height={400}>

@@ -2,10 +2,12 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    /* gap: 10px; */
-    background-color: #061537;
+    height: 100vh;
+    width: 100vw;
 }
 
 body {
-    margin: 0px
+    margin: 0px;
+    padding: 0px;
+    background-color: #061537;
 }
