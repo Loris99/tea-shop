@@ -1,0 +1,15 @@
+.topBarContainer {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+h1 {
+    color: #fff68f;
+    font-size: 3rem;
+}
+
+span {
+    color: #A9A454;
+    font-size: 1.2rem;
+}
