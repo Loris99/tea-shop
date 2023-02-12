@@ -1,0 +1,31 @@
+.filterLineContainer {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding-left: 30px;
+    column-gap: 30px
+}
+
+.dropDown {
+    width: 190px;
+    height: 40px;
+    background-color: #394767;
+    border: 1px solid transparent;
+    color: white;
+    border-radius: 5px;
+}
+
+.dropDown:focus {
+    border: 2px solid #929280;
+    outline-offset: 0px;
+    outline: none;
+}
+
+select {
+    padding: 10px;
+}
+
+option {
+    padding: 10px;
+    color: white
+}
